@@ -1,0 +1,25 @@
+https://github.com/2-mtec-pi-2025-b
+
+1- Cadastrar-se no github:
+ 
+ abra o cmd do VSCode--
+crtl '
+
+git config --global user.name Prhuanetc
+git config --global user.email email.rhuan.etec@gmail.com
+
+
+rede:
+
+npm i
+instalação do npx expo
+npx expo start --localhost --web
+
+
+criação do projeto:
+
+npx create-expo-app@latest calculadora --template blank
+---
+cd calculadora 
+
+npx expo start --android
