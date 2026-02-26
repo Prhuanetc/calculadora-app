@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 
-export default function CalcButton() {
+export default function CalcButton({ theme, label, onPress, Variant="num", wide=false}) {
   return (
     <View>
-      <Text>CalcButton</Text>
+      <Text>{label}</Text>
     </View>
   )
 }
