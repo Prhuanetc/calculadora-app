@@ -1,14 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-
-export default function Display({theme, expression, value}) {
+export default function Display({ theme, expression, value }) {
   return (
     <View
       style={[
         styles.wrap,
         {
-          backgroundColor: theme,card,
+          backgroundColor: theme.card,
           borderColor: theme.stroke,
           shadowColor: theme.shadowDark,
         }
@@ -16,13 +15,14 @@ export default function Display({theme, expression, value}) {
     >
       <Text 
         numberOfLines={1}
-        style={[styles.expression, { color: theme.textDim}]}>
+        style={[styles.expression, { color: theme.textDim }]}
+      >
         {expression}
       </Text>
-
       <Text 
         numberOfLines={1}
-        style={[styles.value, { color: theme.text}]}>
+        style={[styles.value, { color: theme.text }]}
+      >
         {value}
       </Text>
     </View>
@@ -39,20 +39,18 @@ const styles = StyleSheet.create({
     marginBottom: 18,
     shadowOpacity: 0.35,
     shadowRadius: 22,
-    shadowOffset: {width: 0, height: 14},
-    elevation: 8,
+    shadowOffset: { width: 0, height: 14},
+    elevation: 8
   },
-
   expression: {
     fontSize: 14,
     letterSpacing: 0.2,
-    textAlign:'right',
+    textAlign: 'right',
     marginBottom: 6,
   },
-
   value: {
     fontSize: 56,
     fontWeight: "600",
-    textAlign: 'right',
-  },
+    textAlign: 'right'
+  }
 })

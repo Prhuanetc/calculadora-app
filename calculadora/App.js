@@ -12,42 +12,69 @@ export default function App() {
 
   return (
     <View style={[styles.container, {backgroundColor: theme.bg}]}>
-      <StatusBar barStyle={"dark" ? "light-content" : "dark-content"} />
+      <StatusBar barStyle={mode === "dark" ? "light-content" : "dark-content"} />
 
       <View style={styles.topBar}>
         <Pressable
-        onPress={() => setMode((m) => (m === "dark" ? "light" : "dark"))}
-        style={({pressed}) => [
-          styles.toggle,
-          {
-            backgroundColor: theme.card,
-            opacity: pressed ? 0.75 : 1,
-            borderColor: theme.stroke
-          }
-        ]}>
+          onPress={() => setMode((m) => (m === "dark" ? "light" : "dark"))}
+          style={({pressed}) => [
+            styles.toggle,
+            {
+              backgroundColor : theme.card,
+              opacity: pressed ? 0.75 : 1,
+              borderColor: theme.stroke
+            }
+          ]}
+        >
           <Text style={{ color: theme.text, fontWeight: "700"}}>
-            {mode ==="dark" ? "Escuro" : "Claro"}
+            {mode === "dark" ? "Escuro" : "Claro"}
           </Text>
         </Pressable>
       </View>
 
-        <Display
-          theme={theme}
-          expression={"100+"}
-          value={0}
-        />
+      <Display
+        theme={theme}
+        expression={"100+"}
+        value={0}
+      />
 
-
-        <View style={styles.pad}>
-          {/*Linha 1*/}
-          <View style={styles.row}>
-            <CalcButton theme={theme} label="C" variant="neutral" onPress={() => {}} />
-            <CalcButton theme={theme} label="+/-" variant="neutral" onPress={() => {}} />
-            <CalcButton theme={theme} label="%" variant="neutral" onPress={() => {}} />
-            <CalcButton theme={theme} label="÷" variant="op" onPress={() => {}} />
-          </View>
-
+      <View style={styles.pad}>
+        {/* Linha 1 */}
+        <View style={styles.row}>
+          <CalcButton theme={theme} label="C" variant="neutral" onPress={() => {}} />
+          <CalcButton theme={theme} label="+/-" variant="neutral" onPress={() => {}} />
+          <CalcButton theme={theme} label="%" variant="neutral" onPress={() => {}} />
+          <CalcButton theme={theme} label="÷" variant="op" onPress={() => {}} />
         </View>
+        {/* linha 2 */}
+         <View style={styles.row}>
+          <CalcButton theme={theme} label="7" variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="8" variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="9" variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="x" variant="op" onPress={() => {}} />
+        </View>
+                  {/* linha 3 */}
+         <View style={styles.row}>
+          <CalcButton theme={theme} label="4" variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="5" variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="6" variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="-" variant="op" onPress={() => {}} />
+        </View>
+                {/* linha 4 */}
+         <View style={styles.row}>
+          <CalcButton theme={theme} label="1" variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="2" variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="3" variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="+" variant="op" onPress={() => {}} />
+        </View>
+                {/* linha 5 */}
+         <View style={styles.row}>
+          <CalcButton theme={theme} label="0" variant="num" wide onPress={() => {}} />
+          <CalcButton theme={theme} label="." variant="num" onPress={() => {}} />
+          <CalcButton theme={theme} label="=" variant="op" onPress={() => {}} />
+        </View>
+
+      </View>
 
     </View>
   );
@@ -57,7 +84,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal:18,
+    paddingHorizontal: 18,
     paddingTop: 40,
   },
   topBar: {
@@ -65,7 +92,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   toggle: {
-    paddingHorizontal:14,
+    paddingHorizontal: 14,
     paddingVertical: 8,
     borderRadius: 14,
     borderWidth: 1,
@@ -74,8 +101,8 @@ const styles = StyleSheet.create({
     gap: 14,
     paddingBottom: 18,
   },
-  row:{
-    flexDirection: "row",
+  row: {
+    flexDirection: 'row',
     gap: 14,
   }
 });
